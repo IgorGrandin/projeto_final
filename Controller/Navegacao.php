@@ -180,6 +180,10 @@ if(isset($_POST["btnVoltar"])) {
     include_once '../View/ADMPrincipal.php';
 }
 
+if(isset($_POST["btnVoltar2"])) {
+    include_once '../View/ADMListarCadastrados.php';
+}
+
 if(isset($_POST["btnDadosUsuarios"])) {  
     require_once '../Controller/UsuarioController.php';
     include_once '../Model/Usuario.php';

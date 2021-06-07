@@ -178,7 +178,7 @@
                 <form action="/Controller/Navegacao.php" method="post" class= "w3-row w3-light-grey w3-text-blue w3-margin" style="width:30%;">
                     <div class="w3-row w3-center">
                         <div>
-                            <button name="btnVoltar" class="w3-button w3-block w3-margin w3-blue w3-cell w3-round-large" style="width: 90%;">
+                            <button name="btnVoltar2" class="w3-button w3-block w3-margin w3-blue w3-cell w3-round-large" style="width: 90%;">
                                 <i class="w3-large fa fa-angle-double-left"></i> Voltar
                             </button>
                         </div>
