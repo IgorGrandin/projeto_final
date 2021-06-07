@@ -154,4 +154,45 @@ if (isset($_POST["btnExcluirOF"])) {
     }
 }
 
+if(isset($_POST["btnLoginADM"])) {
+    require_once '../Controller/AdministradorController.php';
+    $aController = new AdministradorController();
+
+    if($aController->login($_POST['txtLoginADM'], $_POST['txtSenhaADM']))
+    {
+        include_once '../View/ADMPrincipal.php';
+    }
+}
+
+if(isset($_POST["btnADM"])) {
+    include_once '../View/ADMLogin.php';
+}
+
+if(isset($_POST["btnListarCadastrados"])) {
+    include_once '../View/ADMListarCadastrados.php';
+}
+
+if(isset($_POST["btnListarADM"])) {
+    include_once '../View/ADMListarAdministradores.php';
+}
+
+if(isset($_POST["btnVoltar"])) {
+    include_once '../View/ADMPrincipal.php';
+}
+
+if(isset($_POST["btnDadosUsuarios"])) {  
+    require_once '../Controller/UsuarioController.php';
+    include_once '../Model/Usuario.php';
+
+    $uController = new UsuarioController();
+
+    if ($uController->gerarDados($_POST['iduser'])) {
+        include_once '../View/ADMDadosCadastrados.php';
+    }
+    
+    
+}
+
+
+
 ?>

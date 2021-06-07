@@ -47,6 +47,23 @@ class UsuarioController
             return false;
         }
     }
+
+    public function gerarLista()
+    {
+        require_once '../Model/Usuario.php';
+        $u = new Usuario();
+        return $results = $u->listaCadastrados();
+    }
+    
+    public function gerarDados($id)
+    {
+        require_once '../Model/Usuario.php';
+        $u = new Usuario();
+        $u->dadosCadastrados($id);
+        $_SESSION['Usuario'] = serialize($u);
+        return true;
+    }
+
 }
 
 ?>

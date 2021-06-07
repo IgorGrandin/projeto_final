@@ -145,6 +145,49 @@ class Usuario
             return FALSE;
         }
     }
+
+    public function listaCadastrados(){
+        require_once 'ConexaoBD.php';
+
+        $con = new ConexaoBD();
+        $conn = $con->conectar();
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT idusuario, nome FROM usuario;" ;
+        $re = $conn->query($sql);
+        $conn->close();
+        return $re;
+    }
+    
+    public function dadosCadastrados($id){
+        require_once 'ConexaoBD.php';
+
+        $con = new ConexaoBD();
+        $conn = $con->conectar();
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT * FROM usuario WHERE idusuario = '" . $id . "'";
+        $re = $conn->query($sql);
+        $r = $re->fetch_object();
+
+        if ($r != null) {
+            $this->id = $r->idusuario;
+            $this->nome = $r->nome;
+            $this->email = $r->email;
+            $this->cpf = $r->cpf;
+            $this->dataNascimento = $r->dataNascimento;
+            $conn->close();
+            return TRUE;
+        } else {
+            $conn->close();
+            return FALSE;
+        }
+    }
+
 }
 
 ?>

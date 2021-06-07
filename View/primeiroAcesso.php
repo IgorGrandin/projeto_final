@@ -49,7 +49,7 @@
 
         <div class="w3-row w3-section">
             <div class="w3-center" style="">
-                <button name="btnCadastrar" class="w3-button w3-block w3-margin w3-blue w3-cell w3-roundlarge" style="width: 90%;">Cadastrar</button>
+                <button name="btnCadastrar" class="w3-button w3-block w3-margin w3-blue w3-cell w3-round-large" style="width: 90%;">Cadastrar</button>
             </div>
         </div>
     </form>
